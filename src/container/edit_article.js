@@ -28,12 +28,10 @@ class FullArticle extends Component {
       <div >
       <Modal  open={open} onClose={this.onCloseModel} >
       
-        {/* <div className="media-left">
-          <img className="media-object" style={{height:'140px',width:'140px'}} src={this.props.activeArticle.ThumbNail} />
-        </div> */}
+        
          <div className="ArtcileModal">
          <div className="articletitle">Edit "{this.props.activeArticle.Title}"</div>
-         <SubmitForm news={this.props.resultjson} activeArticle = {this.props.activeArticle}></SubmitForm>
+         <SubmitForm news={this.props.resultjson} onClose={this.props.onClosePopUp} activeArticle = {this.props.activeArticle}></SubmitForm>
          </div>
       
       </Modal>

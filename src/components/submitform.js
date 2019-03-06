@@ -3,7 +3,7 @@ import Moment from 'moment';
 import _ from 'lodash';
 import FileBase64 from 'react-file-base64';
 import axios from 'axios';
-
+import {browserHistory} from "react-router";
 
 class SubmitForm extends React.Component {
     constructor(props) {
@@ -84,7 +84,8 @@ class SubmitForm extends React.Component {
           baseURL: 'http://localhost:3000/'
         });
         const newsAdded = ax.patch('news/'+ ID, patchData).then(data => console.log(data));      
-        
+        browserHistory.push('/home');
+        this.props.onClose();
     }
     getFiles(files){
       
