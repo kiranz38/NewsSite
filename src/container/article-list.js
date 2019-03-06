@@ -10,7 +10,7 @@ import { bindActionCreators } from 'redux';
 import FullArticle from './edit_article';
 
 import ArticleHeader from '../components/article_header';
-
+import {browserHistory} from "react-router";
 import 'airbnb-browser-shims';
 import NewsCategory from '../components/news_category';
 import ArticleItem from '../components/article_item';
@@ -29,20 +29,21 @@ class Article_List extends Component{
   
  
     
-  toggleNew(){
-      this.setState({open : true});
-    }
+  
    //for toggling the Model popup window on click of employee card
   togglePopUp(article){
     this.props.selectArticle(article);
     this.setState({open : true});
+    
+      browserHistory.push('/home/edit');
+    
   }
   componentWillMount(){
     
     this.props.filterNews();
     this.setState({news: this.props.newsFilter});
     this.filterArticle.bind(this);
-    this.toggleNew.bind(this);
+    
   }
 
 filterArticle(term=null){
@@ -92,6 +93,9 @@ filterArticle(term=null){
 
   closePopUp(){
     this.setState({open : false});
+
+      browserHistory.push('/home');
+    
   }
   renderNews(){
     var newsList = this.props.newsFilter;
