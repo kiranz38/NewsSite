@@ -21,7 +21,7 @@ import { stringify } from 'querystring';
 import NewArticle from '../components/news_details';
 
 //Author :Ram
-//Main component which encloses cards and dropdowns of the employees
+//Main component which encloses all the components
 class Article_List extends Component{
 
   
@@ -82,17 +82,7 @@ filterArticle(term=null){
     }
     
   }
-  //for sorting
-  sortEmp(term){
-      var empList = this.props.employeeList;
-      if(!this.props.employeeFilter){
-        empList = this.props.employeeList;
-      }
-     else{
-       empList = this.props.employeeFilter;
-     }
-    this.props.sortEmployee(term,empList);
-  }
+  
 
   //for filtering based on search
   fetchSearchList(term){
@@ -173,7 +163,7 @@ function mapStateToProps(state){
     newsFilter : state.filterNews
   });
 }
-//anything returned from here will be as props on the employee-list container
+//anything returned from here will be as props on the  container
 function mapDispatchToProps(dispatch) {
   //whenever this get called, result will be passed to all the reducers
   return bindActionCreators(Object.assign({},{selectArticle:selectArticle},{filterNews:filterNews}) ,dispatch);
