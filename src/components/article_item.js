@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import  {Card , CardImg ,CardColumns, CardText , CardBody , CardTitle , CardSubTitle , Button}  from 'reactstrap';
 
-//Author: Ram Date: 7/10/2018
+//Author: Ram 
 //Employee card to show employee details(popup)
 class ArticleItem extends Component {
   constructor(props){

@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-//Author: Ram Date :7/10/2018
+//Author: Ram 
 //Reducer for filtering user search and sorting mechanism
 export function filterNews(){
  
