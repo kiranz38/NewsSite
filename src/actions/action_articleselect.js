@@ -1,5 +1,5 @@
 import React from 'react';
-//Author Ram Date : 7/10/2018
+//Author Ram 
 export function selectArticle(article){
   //select book is an action creator which return an object with type property
   return {
