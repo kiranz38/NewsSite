@@ -1,4 +1,15 @@
 @import '../node_modules/perfect-scrollbar/css/perfect-scrollbar.css';
+
+
+html, body {
+  overflow: hidden;
+}
+
+#articlescroll {
+  position: relative;
+  
+  height: 600px;
+}
 .nowrap {
   white-space: nowrap;
 }
@@ -58,6 +69,7 @@ input[type=submit]:hover {
 .category{
   display: flex;
   flex-direction: column;
+  
 }
 .thumbnailimg{
   height: 30px;
@@ -94,17 +106,22 @@ input[type=submit]:hover {
   
 }
 .search-sub-div{
-  border: solid 1px;
-  border-radius: 15px;
-  width: 250px;
+  
+  padding-bottom: 5%;
+  align-self: flex-start;
+  
 }
 .search-super-sub{
   display: flex;
   flex-direction: row;
+  width: auto;
+  float: right;
+  border: solid 1px;
   
+  border-radius: 15px;
 }
 .search-div{
-  padding-left: 48%;
+ 
   
 }
 .glyphicon-pencil{
@@ -116,21 +133,40 @@ padding: 20px;
 cursor: pointer;
 
 }
+.inline-cls{
+  
+  display: inline-block;
+  padding-bottom: 32%;
+  height: 200px;
+}
+.inline-scroll{
+  display: inline-block;
+  height: auto;
+}
+.detailsClass{
+position: relative;
+height: 200px;
+}
 .cardstyle{
-  padding: 5px;
-  width: 70%;
+  
+  
+  width:100%;
+  float: left;
   cursor: pointer;
   height: 100px;
+  text-align: left;
+
 }
 .article-align{
-  border: solid 1px;
+  
   font-size: 22px;
-  padding: 10px;
+  padding: 30px;
   height: 60px;
-  width: 93.5%;
+  width: 100%;
   color: white;
   font-weight: bold;
   background:#2980B9;
+  display: inline-block;
   }
 .overflow-scroll{
   overflow-y: scroll;
@@ -142,6 +178,7 @@ cursor: pointer;
 .float-right{
   float: right;
   padding-right: 30px;
+    
 }
 
 
@@ -157,6 +194,11 @@ cursor: pointer;
     width: auto;
   }
   
+  .search-div{
+    padding-left: 24%;
+    
+  }
+  
 }
 @media screen and (min-width:700px) and (max-width:1007px) {
   .cardstyle {
@@ -164,6 +206,10 @@ cursor: pointer;
   }
   .border-class{
     width: auto;
+  }
+  .search-div{
+    padding-left: 24%;
+    
   }
 }
 /* For 480 Resolution */
@@ -188,6 +234,7 @@ and (max-width: 1605px)
         .border-class{
           width: auto;
         }
+        
 }
 @media only screen
 and (orientation : landscape)
@@ -217,21 +264,32 @@ and (max-device-width : 1007px)
           width: auto;
         }
 }
+.search-div{
+  padding-left: 48%;
+  
+}
 .page-container{
   display: flex;
+  width: 100%;
   flex-direction: row;
   padding: 10px;
   overflow: hidden;
   max-height: 100%;
 }
 .container{
+  position: relative;
   flex-direction: column;
-  min-width: 100%;
-  
-  overflow: hidden;
+  min-width: 60%;
   background-color: #F5F5F5;
-  border-bottom: solid 1px;
+  background-position-y: 10px;
+  height: 100%;
 }
+
+.ps-container > .ps-scrollbar-x-rail,
+.ps-container > .ps-scrollbar-y-rail {   opacity: 0.6; }
+
+.ps-container{color: red;}
+
 
 .container > div {
  

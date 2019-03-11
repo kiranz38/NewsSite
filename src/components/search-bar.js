@@ -8,7 +8,7 @@ class SearchBar extends Component{
     this.state = {term : ''};
   }
   render(){
-    return (<div className="search-div">
+    return (
       <div className="search-sub-div">
       
       <div className="search-super-sub">
@@ -16,7 +16,7 @@ class SearchBar extends Component{
        <input className="search" value = {this.state.term} onChange={event => this.onInputChange(event.target.value)} placeholder="Search"/>
        </div>
       </div>
-      </div>
+     
     );
   }
   onInputChange(term){

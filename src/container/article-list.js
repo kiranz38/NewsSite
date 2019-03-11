@@ -15,23 +15,47 @@ import 'airbnb-browser-shims';
 import NewsCategory from '../components/news_category';
 import ArticleItem from '../components/article_item';
 import SearchBar from '../components/search-bar';
-import PerfectScrollbar from 'react-perfect-scrollbar'
+// import PerfectScrollbar from 'react-perfect-scrollbar'
 import _ from 'lodash';
 import { stringify } from 'querystring';
 import NewArticle from '../components/news_details';
+import perfectScroll from 'perfect-scrollbar';
 
+const ps =new perfectScroll('.container', {
+  wheelSpeed: 1,
+  wheelPropagation: true,
+  minScrollbarLength: 50,
+  scrollXMarginOffset:5,
+  scrollYMarginOffset:5
+});
 //Author :Ram
 //Main component which encloses all the components
 class Article_List extends Component{
 
   
     state = {news :[]};
-  
- 
     
-  
+ 
+   componentDidMount(){
+     
+    //var dom = document.querySelector(".inline-scroll");
+    // perfectScroll = new perfectScroll(".inline-scroll", {
+    //   wheelSpeed: 1,
+    //   wheelPropagation: true,
+    //   minScrollbarLength: 50,
+    //   scrollXMarginOffset:5,
+    //   scrollYMarginOffset:5
+    // });
+    
+  //   this.setState({ps : new perfectScroll('.container', {
+  //     wheelSpeed: 2,
+  //     wheelPropagation: true,
+  //     minScrollbarLength: 20
+  //   })
+  //  });
+  }
    //for toggling the Model popup window on click of employee card
-  togglePopUp(article){
+  togglePopUp(article) {
     this.props.selectArticle(article);
     this.setState({open : true});
     
@@ -121,37 +145,40 @@ filterArticle(term=null){
     
     if(data.length > 0){
         return data.map((articleitem)=>{
+          
           return articleitem.Stories.map((article,i)=>{
-            return(<ArticleItem key={i} item={article} onClick={()=>this.togglePopUp(article)}/>);
+            return(<div key={i} className="inline-cls" >
+            <ArticleItem key={i} item={article} onScroll={()=> ps.update()}  onClick={()=>this.togglePopUp(article)}/>
+            </div>);
           });
+          
         });
     }
     else{
       return("Loading...Please wait..");
     }
-    if(this.state.news.length == 0){
-     
-        return(<div>"No Records Found"</div>);
-      
-    }
+    
   }
  
   render(){
+   
     return(
-      <div>
+      <div style={{textAlign:"center"}}>
       
       <ArticleHeader />
       
        <div className="page-container">
           {this.renderNews()} 
-         
+          
           <div className="container">
           <SearchBar onSearchTermChange={term => this.fetchSearchList(term) } />
+          
+          <div className = "inline-scroll">
           {this.renderArticles()} 
-              
-              
           </div>
-        
+          
+          </div>
+          
        </div>
        <FullArticle resultjson={this.props.newsFilter} open={this.state} onClosePopUp={()=>this.closePopUp()} />
        {/* <NewArticle resultjson={this.props.newsFilter} open={this.state} onClosePopUp={()=>this.closePopUp()}  /> */}

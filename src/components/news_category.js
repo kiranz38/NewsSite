@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import { CardStack, Card } from 'react-cardstack';
 import NewsCategoryCard from '../components/news_details'
+import perfectScroll from 'perfect-scrollbar';
+
+
 
 class NewsCategory extends Component
 {
@@ -17,7 +20,20 @@ class NewsCategory extends Component
           open: !this.state.open
         });
       }
-    
+
+    componentDidMount(){
+      var ps =new perfectScroll('.detailsClass', {
+        wheelSpeed: 1,
+        wheelPropagation: true,
+        minScrollbarLength: 10,
+        scrollXMarginOffset:5,
+        scrollYMarginOffset:5
+        });
+        ps.update();
+    }
+    componentDidUpdate(){
+     
+    }
       render() {
         
         return (

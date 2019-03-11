@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
-import PerfectScrollbar from 'react-perfect-scrollbar';
+
 
 const NewsCategoryCard = (props) => (
 	<div style={{ position: 'absolute', top: 0 }} onClick={()=>props.onClick(props.title)}>
@@ -16,18 +16,20 @@ const NewsCategoryCard = (props) => (
 			
 		</header>
         
-		<div style={{color: '#fff',height:'200px'}} >
-		<PerfectScrollbar>
-        {props.Stories.map((newsitem, i) =>
+		<div style={{color: '#fff',height:'200px'}} className= "detailsClass">
+		        {props.Stories.map((newsitem, i) =>
 				<DetailsRow key={i}
 				icon='icon ion-ios-paper-outline'
 				title={newsitem.AuthorName}
 				summary={newsitem.TextContent.substring(0,50) + "..."}/>
 			)}
-	    </PerfectScrollbar>
+	    
 		</div>
   </div>
 );
+
+
+
 const ProfilePicture = ({ imgSrc, borderColor }) => (
 	<img
 		style={{

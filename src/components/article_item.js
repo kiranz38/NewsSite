@@ -1,17 +1,20 @@
 import React, {Component} from 'react';
 import  {Card , CardImg ,CardColumns, CardText , CardBody , CardTitle , CardSubTitle , Button}  from 'reactstrap';
 
-//Author: Ram 
+//Author: Ram Date: 7/10/2018
 //Employee card to show employee details(popup)
 class ArticleItem extends Component {
   constructor(props){
     super(props);
     
   }
-  
+  componentDidMount(){
+    
+    this.props.onScroll();
+  }
   render(){
     
-  
+    
     return (
               <div className="cardstyle">
               
