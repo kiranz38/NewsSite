@@ -136,8 +136,9 @@ cursor: pointer;
 .inline-cls{
   
   display: inline-block;
-  padding-bottom: 32%;
-  height: 200px;
+  padding-bottom: 18%;
+  margin: 2px;
+  height: 100%;
 }
 .inline-scroll{
   display: inline-block;
@@ -255,7 +256,7 @@ and (max-device-width : 1007px)
 and (orientation : portrait)
 and (-webkit-min-device-pixel-ratio: 1)
 and (min-device-width : 768px)
-and (max-device-width : 1007px)
+and (max-device-width : 800px)
 {
   .cardstyle {
             width: 50%;
@@ -264,10 +265,13 @@ and (max-device-width : 1007px)
           width: auto;
         }
 }
+
 .search-div{
   padding-left: 48%;
   
 }
+
+
 .page-container{
   display: flex;
   width: 100%;
