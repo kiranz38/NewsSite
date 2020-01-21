@@ -230,7 +230,7 @@ and (min-width: 1370px)
 and (max-width: 1605px)
 {
   .cardstyle {
-            width: 32%;
+            width: 100%;
         }
         .border-class{
           width: auto;
